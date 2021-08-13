@@ -1,0 +1,436 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Year",
+        "kind": "GroupingOrMeasure",
+        "name": "W"
+
+    },
+    {
+        "displayName": "Month",
+        "kind": "GroupingOrMeasure",
+        "name": "X"
+    },
+    {
+        "displayName": "Value",
+        "kind": "GroupingOrMeasure",
+        "name": "Y"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "scriptResult": {
+        "dataInput": {
+          "table": {
+            "rows": {
+              "select": [
+                {
+                  "for": {
+                    "in": "W"
+                  }
+                },
+                {
+                "for":	{
+                  "in": "X"
+                  }
+                 } ,
+                {
+                "for":	{
+                  "in": "Y"
+                  }
+                }
+                ],
+              "dataReductionAlgorithm": {
+                "top": {}
+              }
+            }
+          }
+        },
+        "script": {
+          "scriptProviderDefault": "R",
+          "scriptOutputType": "html",
+          "source": {
+            "objectName": "rcv_script",
+            "propertyName": "source"
+          },
+          "provider": {
+            "objectName": "rcv_script",
+            "propertyName": "provider"
+          }
+        }
+      }
+    }
+  ],
+  "objects": {
+
+    "FormatP":{
+      "displayName": "General Format",
+      "description": "General Format",
+      "properties": {
+        "ColorO":{
+          "displayName": "Color of the observations",
+          "description": "Color of the observations",
+          "type": {
+            "fill": {
+              "solid": {
+                "color":true
+              }
+            }
+          }
+        },
+            "ColorP":{
+              "displayName": "Color of the predictions",
+              "description": "Color of the predictions",
+              "type": {
+                "fill": {
+                  "solid": {
+                    "color":true
+                  }
+                }
+              }
+            },
+        "Xaxis":{
+          "displayName": "Xaxis",
+          "description": "Title of the Xaxis",
+          "type": {
+            "text": true
+          }
+        },
+        "Yaxis":{
+          "displayName": "Yaxis",
+          "description": "Title of the Yaxis",
+          "type": {
+            "text": true
+          }
+        },
+        "Title":{
+          "displayName": "Title",
+          "description": "Plot Title",
+          "type": {
+            "text": true
+          }
+        }
+      }
+    },
+    "Tooltip":{
+      "displayName": "Tooltip",
+      "description": "Change the Tooltip",
+      "properties": {
+        "TTitreO":{
+          "displayName": "Tooltip titlte for the observations",
+          "description": "Tooltip titlte for the observations",
+          "type": {
+            "text": true
+          }
+        },
+        "TTitreP":{
+          "displayName": "Tooltip titlte for the predictions",
+          "description": "Tooltip titlte for the predictions",
+          "type": {
+            "text": true
+          }
+        }
+      }
+    },
+    
+    "ETS":{
+      "displayName": "Exponential Smoothing",
+      "description": "Exponential Smoothing",
+      "properties": {
+        "show":{
+          "displayName": "Show",
+          "description": "Enable exponential smoothing ",
+          "type": {
+            "bool":true
+          }
+        },
+        "ForecastLength":{
+          "displayName": "Forecast Length",
+          "description": "Select the forecast length",
+          "type": {
+            "text":true
+            
+          }
+        },
+        "Error":{
+          "displayName": "Error type",
+          "description": "Error type",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "Additive",
+                "value": "A"
+              },
+              {
+                "displayName": "Multiplicative",
+                "value": "M"
+              },
+              {
+                "displayName": "Choix automatique ",
+                "value": "Z"
+              }
+            ]
+          }
+        },
+        "Trend":{
+          "displayName": "Trend Type",
+          "description": "Trend Type",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "None",
+                "value": "N"
+              },
+              {
+                "displayName": "Additive",
+                "value": "A"
+              },
+              {
+                "displayName": "Multiplicative",
+                "value": "M"
+              },
+              {
+                "displayName": "Choix automatique ",
+                "value": "Z"
+              }
+            ]
+          }
+        },
+        "Seasonal":{
+          "displayName": "Season type",
+          "description": "Season type",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "None",
+                "value": "N"
+              },
+              {
+                "displayName": "Additive",
+                "value": "A"
+              },
+              {
+                "displayName": "Multiplicative",
+                "value": "M"
+              },
+              {
+                "displayName": "Choix automatique ",
+                "value": "Z"
+              }
+            ]
+          }
+        }
+      }
+    },
+      "ARIMA":{
+        "displayName": "ARIMA",
+        "description": "ARIMA",
+        "properties": {
+          "show":{
+            "displayName": "Show",
+            "description": "Enable ARIMA",
+            "type": {
+              "bool":true
+            }
+          },
+          "ForecastLength":{
+            "displayName": "Forecast Length",
+            "description": "Select the forecast length",
+            "type": {
+              "text":true
+              
+            }
+          },
+          "AO":{
+            "displayName": "Autoregression Order",
+            "description": "Autoregression Order",
+            "type": {
+              "numeric":true
+              
+            }
+          },
+          "dd":{
+            "displayName": "The degree of differencing",
+            "description": "The degree of differencing",
+            "type": {
+              "numeric":true
+              
+            }
+          },
+          "MAO":{
+            "displayName": "The moving average order",
+            "description": "The moving average order",
+            "type": {
+              "numeric":true
+              
+            }
+          },
+          "Alm":{
+            "displayName": "Allow Mean",
+            "description": "Allow Mean",
+            "type": {
+              "bool":true
+              
+            }
+          },
+          "Ald":{
+            "displayName": "Allow drift",
+            "description": "Allow drift",
+            "type": {
+              "bool":true
+              
+            }
+          }
+        }
+
+      },
+      "STLM":{
+        "displayName": "STLM",
+        "description": "Seasonal and Trend decomposition through Linear Regression",
+        "properties": {
+          "show":{
+            "displayName": "Show",
+            "description": "Enable STLM",
+            "type": {
+              "bool":true
+            }
+          },
+          "ForecastLength":{
+            "displayName": "Forecast Length",
+            "description": "Select the forecast length",
+            "type": {
+              "text":true
+              
+            }
+          }
+        }
+
+      },
+      "TSLM":{
+        "displayName": "TSLM",
+        "description": "Time series linear model",
+        "properties": {
+          "show":{
+            "displayName": "Show",
+            "description": "Enable Time series linear model",
+            "type": {
+              "bool":true
+            }
+          },
+          "ForecastLength":{
+            "displayName": "Forecast Length",
+            "description": "Select the forecast length",
+            "type": {
+              "text":true
+              
+            }
+          }
+        }
+
+      },
+      "NNETAR":{
+        "displayName": "Neural Network",
+        "description": "Neural Network for time series",
+        "properties": {
+          "show":{
+            "displayName": "Show",
+            "description": "Enable TSLM",
+            "type": {
+              "bool":true
+            }
+          },
+          "ForecastLength":{
+            "displayName": "Forecast Length",
+            "description": "Select the forecast length",
+            "type": {
+              "text":true
+              
+            }
+          },
+          "decay":{
+            "displayName": "Decay",
+            "description": "Number of seasonal lags",
+            "type": {
+              "numeric":true
+              
+            }
+          },
+          "Nnd":{
+            "displayName": "Number of nodes",
+            "description": "Number of nodes",
+            "type": {
+              "numeric":true
+              
+            }
+          },
+          "nnw":{
+            "displayName": "Number of networks",
+            "description": "Number of networks",
+            "type": {
+              "numeric":true
+              
+            }
+          }
+        }
+
+      },
+    "IDC":{
+      "displayName": "Confidence interval",
+      "description": "Confidence interval",
+      "properties": {
+        "show":{
+          "displayName": "Show",
+          "description": "Enable exponential smoothing ",
+          "type": {
+            "bool":true
+          }
+        },
+        "IC_color9":{
+          "displayName": "Color CI 95%",
+          "displayNameKey":" Color of the confidence interval",
+          "type": {
+            "fill" :{
+              "solid": {
+                "color":true
+              }
+            }
+          }
+        },
+        "IC_color8":{
+          "displayName": "Color CI 80%",
+          "displayNameKey":" Color of the confidence interval",
+          "type": {
+            "fill" :{
+              "solid": {
+                "color":true
+              }
+            }
+          }
+        }
+      }
+    },
+      
+    "Exp":{
+      "displayName": "Export",
+      "description": "Export data",
+      "properties": {
+        "Export":{
+          "displayName": "Export prediction",
+          "displayNameKey":" Exporter only the predicted data",
+          "type": {
+            "bool" :true
+          }
+        },
+        "PExport":{
+          "displayName": "PATH",
+          "description":"Eg: C:/Users/Documents/Export_data_pred.csv",
+          "type": {
+            "text" :true
+          }
+        }
+      }
+
+    }
+  },
+  "suppressDefaultTitle": true
+}

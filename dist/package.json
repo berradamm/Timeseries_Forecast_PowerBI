@@ -1,0 +1,17 @@
+{
+    "version": "1.0.0",
+    "author": {"name":"Berrada","email":"berradamm21@gmail.com"},
+    "resources": [
+        {
+            "resourceId": "rId0",
+            "sourceType": 5,
+            "file": "resources/visualRPBI6EEC84B134654970A1CD3E4F1607EBD8.pbiviz.json"
+        }
+    ],
+    "visual": {"name":"visualRPBI","displayName":"Forecast","guid":"visualRPBI6EEC84B134654970A1CD3E4F1607EBD8","visualClassName":"Visual","version":"1.0.0","description":"test CVpbi","supportUrl":"https://github.com/berradamm","gitHubUrl":"https://github.com/berradamm"},
+    "metadata": {
+        "pbivizjson": {
+            "resourceId": "rId0"
+        }
+    }  
+}
